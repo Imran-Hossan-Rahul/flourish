@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+
+:root {
+  --background: #fbf9f6; /* Warm off-white */
+  --foreground: #2d3748; /* Soft dark slate */
+  
+  --primary: #1b4332; /* Deep emerald green */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f4ece6; /* Soft blush */
+  --secondary-foreground: #3d2c23;
+  
+  --accent: #d8b4e2; /* Muted lavender/floral accent */
+  --accent-foreground: #ffffff;
+  
+  --border: #e2e8f0;
+  --input: #edf2f7;
+}
+
+.dark {
+  --background: #111a15;
+  --foreground: #e2e8f0;
+
+  --primary: #2d6a4f;
+  --primary-foreground: #ffffff;
+
+  --secondary: #3d2c23;
+  --secondary-foreground: #f4ece6;
+
+  --accent: #a56cc1;
+  --accent-foreground: #ffffff;
+
+  --border: #2d3748;
+  --input: #1a202c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+}
+
+html, body {
+  @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif tracking-tight;
+}
